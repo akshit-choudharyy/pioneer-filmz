@@ -17,8 +17,6 @@ const Brands = () => {
     <Image src={'https://uniquetimberplywood.com/wp-content/themes/UniqueTimber/assets/images/brands/jivanjor.png'} height={[16,32]} width={[16,32]} objectFit={'contain'} shadow={'xl'} className='homegal' rounded={'lg'}/>
     <Image src={'https://mpghardware.com/img/clients/l1.jpg'} height={[16,32]} width={[16,32]} objectFit={'contain'} shadow={'xl'} className='homegal' rounded={'lg'}/>
     <Image src={'https://mpghardware.com/img/clients/l2.jpg'} height={[16,32]} width={[16,32]} objectFit={'contain'} shadow={'xl'} className='homegal' rounded={'lg'}/>
-    
-
     </HStack>
    </VStack>
   )

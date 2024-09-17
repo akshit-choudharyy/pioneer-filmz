@@ -28,7 +28,7 @@ const Footer = () => {
         p={4} 
         alignItems={'center'} 
         justifyContent={'space-around'} 
-        backgroundImage={'url("https://img.freepik.com/free-photo/painted-solid-concrete-wall-textured-background_53876-101652.jpg?t=st=1726567716~exp=1726571316~hmac=317a857617342040a5e83bed58a2cf699f68ef6bf605f2e5494746ab716fd4ce&w=996")'}
+        backgroundImage={'url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")'}
         backgroundSize="cover"
        // Adding rounded corners to the background
         boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)" // Adding box shadow
