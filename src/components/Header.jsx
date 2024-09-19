@@ -38,13 +38,11 @@ const Header = () => {
     backdropFilter: "blur(20px)",
     WebkitBackdropFilter: "blur(20px)", // Adjust the pixel value as needed
   };
-
   return (
     <Flex
       as="header"
       align="center"
       justify="space-between"
-      
       borderColor="gray.200"
       position="fixed"
       top="0"
@@ -65,10 +63,9 @@ const Header = () => {
         fontSize={"xl"}
         align="center"
       >
-        
         <Link to="/gallery">
           <HStack mx={4} className="navlink">
-            <FaPhotoVideo /> <Text>Gallery</Text>
+          <FaPhotoVideo /> <Text>Gallery</Text>
           </HStack>{" "}
         </Link>
         <Link to="/contact">
@@ -76,15 +73,11 @@ const Header = () => {
             <FaPhone /> <Text>Contact Us</Text>
           </HStack>{" "}
         </Link>
- 
-     
-       
       </Flex>
       {/* Hamburger menu for mobile */}
       <Box mr={4} display={["flex", "none"]}>
         <MdMenu size={36} onClick={onOpen} />
       </Box>
-
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent fontSize={'24'} textColor={'white'} style={{backgroundColor:'rgba(0,0,0,0.6)'}} >
@@ -93,7 +86,6 @@ const Header = () => {
            <Heading textColor={'white'} fontSize={'md'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕱𝖎𝖑𝖒𝖟
            </Heading>
           </DrawerHeader>
-
           <DrawerBody>
             <VStack spacing={12} onClick={onClose}>
               <Link to="/">
@@ -111,12 +103,12 @@ const Header = () => {
                   <FaPhotoVideo /> <Text>Gallery</Text>
                 </HStack>{" "}
               </Link>
+              https://images.pexels.com/photos/1595241/pexels-photo-1595241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
               <Link to="/contact">
                 <HStack mx={4} className="navlink">
                   <FaPhone /> <Text>Contact Us</Text>
                 </HStack>{" "}
               </Link>
-            
             </VStack>
           </DrawerBody>
         </DrawerContent>
