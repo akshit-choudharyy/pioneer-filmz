@@ -28,7 +28,7 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import sls from "../images/sls.png";
+import pflogo from "../images/pflogo.png";
 import { MdMenu } from "react-icons/md";
 
 const Header = () => {
@@ -50,10 +50,12 @@ const Header = () => {
       zIndex="1"
       style={headerStyle}
     >
-      <Stack direction={['column','row']} p={'8'} spacing={4} >
+      <Stack direction={['column','row']} p={'8'}  >
         <Link to="/">
-          <Heading fontSize={'lg'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕱𝖎𝖑𝖒𝖟
-          </Heading>
+        <Image src={pflogo} alt="Pioneer Filmz Logo" width="100px"   // Set the width for the rectangle shape
+    height="35px" objectFit="cover" />
+          {/* <Heading fontSize={'lg'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕱𝖎𝖑𝖒𝖟
+          </Heading> */}
         </Link>
       </Stack>
       {/* Navigation links */}
