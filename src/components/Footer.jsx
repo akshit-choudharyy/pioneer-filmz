@@ -31,7 +31,7 @@ const Footer = () => {
         backgroundImage={'url("https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")'}
         backgroundSize="cover"
        // Adding rounded corners to the background
-        boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)" // Adding box shadow
+        boxShadow="4px 4px 12px black" // Adding box shadow
       >
         <VStack alignItems={'center'} justifyContent={'center'}>
           <Heading>Pioneer Filmz</Heading>

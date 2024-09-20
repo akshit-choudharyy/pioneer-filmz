@@ -68,7 +68,7 @@ const Service = () => {
       {/* Link to Gallery */}
       <Link to="/gallery">
         <HStack justify="center" spacing={2}>
-          <FaPhotoVideo /> <Text>Gallery</Text>
+        <FaPhotoVideo style={{ fontSize: '44px' }} /> <Text>Gallery</Text>
         </HStack>
       </Link>
     </div>
