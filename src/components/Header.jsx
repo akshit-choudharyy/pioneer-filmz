@@ -125,11 +125,6 @@ const Header = () => {
                   <FaHome /> <Text>Home</Text>
                 </HStack>
               </Link>
-              <Link to="/aboutus">
-                <HStack mx={4} className="navlink">
-                  <FaInfoCircle /> <Text>About Us</Text>
-                </HStack>
-              </Link>
               <Link to="/gallery">
                 <HStack mx={4} className="navlink">
                   <FaPhotoVideo /> <Text>Gallery</Text>
