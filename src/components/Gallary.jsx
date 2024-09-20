@@ -80,7 +80,7 @@ const Gallery = () => {
             <Box 
               key={index} 
               display="flex" 
-              flexDirection="row" 
+              flexDirection={{ base: "column", md: "row" }} // Responsive direction
               gap={4} 
               p={4} 
               alignItems="flex-start" 
@@ -96,8 +96,8 @@ const Gallery = () => {
                       src={getThumbnailUrl(videoId)}
                       alt={`Video Thumbnail ${index + 1}`}
                       borderRadius="md"
-                      width="360px" // Set a specific width like YouTube
-                      height="202px" // 16:9 aspect ratio
+                      width={{ base: "100%", md: "360px" }} // Responsive width
+                      height={{ base: "auto", md: "202px" }} // Responsive height
                       objectFit="cover"
                       _hover={{ transform: 'scale(1.05)' }}
                       transition="transform 0.3s"
@@ -110,7 +110,7 @@ const Gallery = () => {
               <Box display="flex" flexDirection="column" justifyContent="space-between" flex="1">
                 {/* Video Title */}
                 <Link href={video.url} isExternal>
-                  <Text fontSize="lg" fontWeight="bold" _hover={{ color: "blue.500" }}>
+                  <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold" _hover={{ color: "blue.500" }}>
                     {video.title}
                   </Text>
                 </Link>
