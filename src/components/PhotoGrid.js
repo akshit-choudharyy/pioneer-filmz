@@ -28,7 +28,7 @@ const styles = {
     aspectRatio: '16/9', // Maintains a 16:9 ratio or use a different ratio as per the original aspect
     objectFit: 'cover',  // Ensures the image covers the area without stretching
     borderRadius: '8px',
-    boxShadow: '0px 12px 16px rgba(0, 0, 0, 0.2)',
+    boxShadow: '0px 12px 16px rgba(0, 0, 0, 0.9)',
     transition: 'transform 0.3s ease-in-out',
   },
 };
