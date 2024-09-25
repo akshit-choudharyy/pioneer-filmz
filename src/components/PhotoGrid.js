@@ -16,8 +16,8 @@ const styles = {
   gridContainer: {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '100px',
-    padding: '100px',
+    gap: '200px',
+    padding: '200px',
   },
   link: {
     display: 'block',
