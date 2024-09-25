@@ -1,77 +1,139 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  HStack,
-  Text,
-  VStack,
-  Box,
-} from "@chakra-ui/react";
+import { VStack, Box, Heading, Text, List, ListItem, Button } from "@chakra-ui/react";
 import { FaPhotoVideo } from "react-icons/fa";
+import styled from 'styled-components';
+
+// Styled components for additional styling
+const ServiceContainer = styled(Box)`
+  background-color: #1a202c; /* gray.900 */
+  color: #f7fafc; /* gray.100 */
+  padding: 3rem 1.5rem;
+  position: relative; /* To position pseudo-elements */
+  overflow: hidden; /* Ensure dots don't overflow */
+`;
+
+const StyledHeading = styled(Heading)`
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  color: #ffd700; /* gold.400 */
+  font-size: 3xl; /* Consistent heading size */
+  margin-bottom: 1rem;
+`;
+
+const StyledText = styled(Text)`
+  max-width: 600px;
+  line-height: 1.8;
+  color: #e2e8f0; /* gray.300 */
+  margin-bottom: 2rem; /* Space below text */
+`;
+
+const StyledList = styled(List)`
+  text-align: left;
+`;
+
+const GalleryButton = styled(Button)`
+  color: #1a202c; /* gray.900 */
+  border-color: #ffd700; /* gold.400 */
+  &:hover {
+    background-color: #ffd700; /* gold.400 */
+    color: #1a202c; /* gray.900 */
+  }
+`;
+
+// Dots and Shapes
+const BackgroundShape = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interference with clicks */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.2;
+  }
+  &::before {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+  }
+  &::after {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    right: 10%;
+  }
+`;
 
 const Service = () => {
-  // Styles for the service container
-  const serviceStyle = {
-    padding: '40px',
-    backgroundColor: 'white',
-    maxWidth: '1200px',
-    margin: '20px auto',
-    textAlign: 'center',
-  };
-
-  // Styles for the header
-  const headerStyle = {
-    fontSize: '32px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-    color: '#333',
-  };
-
-  // Styles for the description text
-  const descriptionStyle = {
-    fontSize: '18px',
-    lineHeight: '1.8', // Increased line height for better readability
-    textAlign: 'justify', 
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',// Justify text for symmetrical alignment
-    color: '#555',
-  };
-
   return (
-    <div style={serviceStyle}>
-      <h2 style={headerStyle}>Welcome to Pioneer Filmz</h2>
-      
-      {/* Description Paragraph */}
-      <p style={descriptionStyle}>
-        There are more than 100 film production companies in the capital region, 
-        but when it comes to professionalism, Pioneer Filmz has set a benchmark 
-        that is hard to match. It is the leading video and film production company 
-        by far. They have expertise in the production of documentary films, corporate 
-        films, ad films, promotional videos, and all other types of creative videos.
-      </p>
+    <ServiceContainer>
+      <BackgroundShape />
+      <VStack maxW="1200px" mx="auto" spacing={12} position="relative" zIndex={1}>
+        <StyledHeading as="h2" fontSize="4xl">
+          Welcome to Pioneer Filmz
+        </StyledHeading>
+        <StyledText fontSize="lg">
+          At Pioneer Filmz, we craft compelling stories that inspire, educate, and captivate audiences. As a leading video production company, we specialize in creating high-quality documentary films, corporate films, ad films, promotional videos, and other creative content that brings your vision to life.
+        </StyledText>
 
-      <p style={descriptionStyle}>
-        The team comprises highly skilled professionals who are always on their toes, 
-        ready to provide the best service. For more details, visit{" "}
-        <a href="https://pioneerfilmz.com/" target="_blank" rel="noopener noreferrer">
-          https://pioneerfilmz.com/
-        </a>.
-      </p>
-      
-      <br />
+        {/* Alternating Sections */}
+        <VStack align="start" spacing={6} width="100%">
+          <VStack align="start" spacing={2} width="100%">
+            <StyledHeading as="h3">Our Mission</StyledHeading>
+            <StyledText fontSize="lg">
+              Our mission is to deliver exceptional visual storytelling that resonates with your target audience. We believe in the power of film to transform perspectives, build brands, and drive results.
+            </StyledText>
+          </VStack>
 
-      <p style={descriptionStyle}>
-        Explore various documentaries and videos in our gallery section.
-      </p>
+          <VStack align="end" spacing={2} width="100%">
+            <StyledHeading as="h3">Our Expertise</StyledHeading>
+            <StyledList spacing={3} fontSize="lg">
+              <ListItem>Documentary Films: Sharing real stories, inspiring change</ListItem>
+              <ListItem>Corporate Films: Showcasing your brand, values, and vision</ListItem>
+              <ListItem>Ad Films: Grabbing attention, driving sales</ListItem>
+              <ListItem>Promotional Videos: Elevating your product, service, or event</ListItem>
+              <ListItem>Explainer Videos: Simplifying complex ideas, engaging audiences</ListItem>
+              <ListItem>Social Media Content: Engaging, informative, and shareable</ListItem>
+            </StyledList>
+          </VStack>
+        </VStack>
 
-      <br />
+        <VStack align="start" spacing={6} width="100%">
+          <VStack align="start" spacing={2} width="100%">
+            <StyledHeading as="h3">Our Team</StyledHeading>
+            <StyledList spacing={3} fontSize="lg">
+              <ListItem>Experienced directors and producers</ListItem>
+              <ListItem>Skilled cinematographers and editors</ListItem>
+              <ListItem>Creative scriptwriters and storytellers</ListItem>
+              <ListItem>Innovative visual effects artists</ListItem>
+            </StyledList>
+          </VStack>
 
-      {/* Link to Gallery */}
-      <Link to="/gallery">
-        <HStack justify="center" spacing={2}>
-        <FaPhotoVideo style={{ fontSize: '44px' }} /> <Text>Gallery</Text>
-        </HStack>
-      </Link>
-    </div>
+          <VStack align="end" spacing={2} width="100%">
+            <StyledHeading as="h3">Why Choose Pioneer Filmz?</StyledHeading>
+            <StyledList spacing={3} fontSize="lg">
+              <ListItem>Unparalleled creativity and attention to detail</ListItem>
+              <ListItem>Personalized service, tailored to your needs</ListItem>
+              <ListItem>State-of-the-art equipment and technology</ListItem>
+              <ListItem>Cost-effective solutions without compromising quality</ListItem>
+              <ListItem>Timely delivery, meeting deadlines</ListItem>
+            </StyledList>
+          </VStack>
+        </VStack>
+
+        {/* Call to Action: Gallery Link */}
+        <Link to="/gallery">
+          <GalleryButton size="lg" leftIcon={<FaPhotoVideo />}>
+            View Our Gallery
+          </GalleryButton>
+        </Link>
+      </VStack>
+    </ServiceContainer>
   );
 };
 
