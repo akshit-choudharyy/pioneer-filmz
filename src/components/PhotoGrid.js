@@ -15,9 +15,9 @@ const PhotoGrid = ({ photos }) => {
 const styles = {
   gridContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)', // 2 columns, keeping it fixed
-    gap: '50px',
-    padding: '50px',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '100px',
+    padding: '100px',
   },
   link: {
     display: 'block',
