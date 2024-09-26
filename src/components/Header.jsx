@@ -86,11 +86,11 @@ const Header = () => {
         fontSize={"xl"}
         align="center"
       >
-        {/* <Link to="/gallery">
+        <Link to="/gallery">
           <HStack mx={4} className="navlink">
             <FaPhotoVideo /> <Text>Gallery</Text>
           </HStack>
-        </Link> */}
+        </Link>
         <Link to="/contact">
           <HStack mx={4} className="navlink">
             <FaPhone /> <Text>Contact Us</Text>

@@ -121,17 +121,17 @@ const Service = () => {
               <ListItem>Personalized service, tailored to your needs</ListItem>
               <ListItem>State-of-the-art equipment and technology</ListItem>
               <ListItem>Cost-effective solutions without compromising quality</ListItem>
-              <ListItem>Timely delivery, meeting deadlines</ListItem>
+              <ListItem>Timely delivery, meeting deadlines   </ListItem>
             </StyledList>
           </VStack>
         </VStack>
 
         {/* Call to Action: Gallery Link */}
-        {/* <Link to="/gallery"> */}
+        <Link to="/gallery">
           <GalleryButton size="lg" leftIcon={<FaPhotoVideo />}>
             View Our Gallery
           </GalleryButton>
-        {/* </Link> */}
+        </Link>
       </VStack>
     </ServiceContainer>
   );
