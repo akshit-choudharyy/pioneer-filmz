@@ -127,11 +127,11 @@ const Service = () => {
         </VStack>
 
         {/* Call to Action: Gallery Link */}
-        <Link to="/gallery">
+        {/* <Link to="/gallery"> */}
           <GalleryButton size="lg" leftIcon={<FaPhotoVideo />}>
             View Our Gallery
           </GalleryButton>
-        </Link>
+        {/* </Link> */}
       </VStack>
     </ServiceContainer>
   );
