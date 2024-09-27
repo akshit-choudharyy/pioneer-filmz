@@ -80,14 +80,14 @@ const Header = () => {
       </Stack>
 
       {/* Navigation links */}
-      <Flex
+      <Flex       
         display={{ base: "none", md: "flex" }}
         mr={8}
         fontSize={"xl"}
         align="center"
       >
         <Link to="/gallery">
-          <HStack mx={4} className="navlink">
+          <HStack mx = {4} className="navlink">
             <FaPhotoVideo /> <Text>Gallery</Text>
           </HStack>
         </Link>
@@ -105,12 +105,11 @@ const Header = () => {
         onClick={toggleAudio}
         mr={8}
       />
-
+      
       {/* Hamburger menu for mobile */}
       <Box mr={4} display={["flex", "none"]}>
         <MdMenu size={36} onClick={onOpen} />
       </Box>
-
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent fontSize={'24'} textColor={'white'} style={{backgroundColor:'rgba(0,0,0,0.6)'}} >

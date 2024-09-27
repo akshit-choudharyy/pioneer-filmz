@@ -1,4 +1,5 @@
 import React from 'react';
+import Texture from '../assets/texture.png'; // Import your texture image
 
 const VideoProductionComponent = ({ 
   imageUrl = "https://images.pexels.com/photos/1932666/pexels-photo-1932666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
@@ -21,8 +22,13 @@ const VideoProductionComponent = ({
       margin: '0 auto',
       marginTop: '40px',
       marginBottom: '40px',
-
+      backgroundImage: `url(${Texture})`, // Add texture as background
+      backgroundSize: 'cover',  // Make sure the texture covers the whole area
+      backgroundPosition: 'center',  // Center the texture background
+      backgroundRepeat: 'no-repeat',  // Prevent texture from repeating
       boxSizing: 'border-box',
+      borderRadius: '8px',  // Add a border-radius to match the image style
+      boxShadow: '0px 12px 16px rgba(0, 0, 0, 0.3)',  // Add box-shadow to give depth
     }}>
       {/* Left Side: Image */}
       <div style={{
