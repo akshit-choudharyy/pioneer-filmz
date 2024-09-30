@@ -23,19 +23,18 @@ import {
   FaVolumeUp,
   FaVolumeMute,
   FaHome,
-  FaInfoCircle,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import pflogo from "../images/pflogo.png";
 import { MdMenu } from "react-icons/md";
-import bgMusic from '../assets/bgmusix.mp3'; // Import the audio file
+import bgMusic from '../assets/bgmusix.mp3';
 
-const Header = () => {
+const Header = ({ scrollToPhotoGrid }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   // Audio playback state and control
   const [isPlaying, setIsPlaying] = useState(true);
-  const audioRef = useRef(new Audio(bgMusic)); // Use useRef to manage audio instance
+  const audioRef = useRef(new Audio(bgMusic));
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -47,18 +46,17 @@ const Header = () => {
     }
 
     return () => {
-      audio.pause(); // Clean up audio when unmounted
+      audio.pause();
     };
   }, [isPlaying]);
 
-  // Toggle audio function
   const toggleAudio = () => {
     setIsPlaying(prev => !prev);
   };
 
   const headerStyle = {
     backdropFilter: "blur(20px)",
-    WebkitBackdropFilter: "blur(20px)", // Adjust the pixel value as needed
+    WebkitBackdropFilter: "blur(20px)",
   };
 
   return (
@@ -79,18 +77,10 @@ const Header = () => {
         </Link>
       </Stack>
 
-      {/* Navigation links */}
-      <Flex       
-        display={{ base: "none", md: "flex" }}
-        mr={8}
-        fontSize={"xl"}
-        align="center"
-      >
-        <Link to="/gallery">
-          <HStack mx = {4} className="navlink">
-            <FaPhotoVideo /> <Text>Gallery</Text>
-          </HStack>
-        </Link>
+      <Flex display={{ base: "none", md: "flex" }} mr={8} fontSize={"xl"} align="center">
+        <HStack mx={4} className="navlink" onClick={scrollToPhotoGrid}>
+          <FaPhotoVideo /> <Text>Our Services</Text>
+        </HStack>
         <Link to="/contact">
           <HStack mx={4} className="navlink">
             <FaPhone /> <Text>Contact Us</Text>
@@ -98,21 +88,19 @@ const Header = () => {
         </Link>
       </Flex>
 
-      {/* Audio control button */}
       <IconButton
         aria-label="Toggle audio"
         icon={isPlaying ? <FaVolumeUp /> : <FaVolumeMute />}
         onClick={toggleAudio}
         mr={8}
       />
-      
-      {/* Hamburger menu for mobile */}
+
       <Box mr={4} display={["flex", "none"]}>
         <MdMenu size={36} onClick={onOpen} />
       </Box>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent fontSize={'24'} textColor={'white'} style={{backgroundColor:'rgba(0,0,0,0.6)'}} >
+        <DrawerContent fontSize={'24'} textColor={'white'} style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
           <DrawerCloseButton fontSize={'24'} />
           <DrawerHeader>
             <Heading textColor={'white'} fontSize={'md'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕱𝖎𝖑𝖒𝖟</Heading>
@@ -124,11 +112,9 @@ const Header = () => {
                   <FaHome /> <Text>Home</Text>
                 </HStack>
               </Link>
-              <Link to="/gallery">
-                <HStack mx={4} className="navlink">
-                  <FaPhotoVideo /> <Text>Gallery</Text>
-                </HStack>
-              </Link>
+              <HStack mx={4} className="navlink" onClick={scrollToPhotoGrid}>
+                <FaPhotoVideo /> <Text>Gallery</Text>
+              </HStack>
               <Link to="/contact">
                 <HStack mx={4} className="navlink">
                   <FaPhone /> <Text>Contact Us</Text>

@@ -1,14 +1,14 @@
-import React from 'react'
-import Hero from './Hero'
-import Service from './Service'
-import Brands from './Brands'
-import ChatButton from './ChatButton'
-import Footer from './Footer'
-import PhotoGrid from './PhotoGrid'
+import React, { useRef, useEffect } from 'react';
+import Hero from './Hero';
+import Service from './Service';
+import Brands from './Brands';
+import ChatButton from './ChatButton';
+import Footer from './Footer';
+import PhotoGrid from './PhotoGrid';
+import VideoProductionComponent from './VideoProduction';
+
 import Catalog from '../assets/catalog.png';
 import Digital from '../assets/digital advertising.png';
-
-
 import Business from '../assets/BUSINESS .png';
 import School from '../assets/SCHOOL CATALOG .png';
 import Threede from '../assets/3de.png';
@@ -18,10 +18,22 @@ import Logos from '../assets/LOGO THUMBNAILS 2 (2).png';
 import Corp from '../assets/corporate.png';
 import product from '../assets/product photo.png';
 
+const Home = ({ setScrollToPhotoGrid }) => {
+  const photoGridRef = useRef(null);
 
-import VideoProductionComponent from './VideoProduction'
+  const scrollToPhotoGrid = () => {
+    if (photoGridRef.current) {
+      photoGridRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-const Home = () => {
+  // Set the scrollToPhotoGrid function to be used by the Header
+  useEffect(() => {
+    if (setScrollToPhotoGrid) {
+      setScrollToPhotoGrid(scrollToPhotoGrid);
+    }
+  }, [setScrollToPhotoGrid]);
+
   const photos = [
     { url: Corp, link: 'https://drive.google.com/drive/folders/1wtGxBsQ7tuJERXQI7_MNIY88bc3xoy-g?usp=drive_link' },
     { url: Label, link: 'https://drive.google.com/drive/folders/1i-wAMAYcKovHgd7XLClbCIU26z0r9y-y?usp=sharing' },
@@ -38,16 +50,18 @@ const Home = () => {
   ];
 
   return (
-   <>
-   <Hero/>
-   <Service/>
-   <VideoProductionComponent />
-   <PhotoGrid photos={photos} />
-   <Brands />
-   <ChatButton />
-   <Footer/>
-   </>
-  )
-}
+    <>
+      <Hero />
+      <Service />
+      <VideoProductionComponent />
+      <div ref={photoGridRef}>
+        <PhotoGrid photos={photos} />
+      </div>
+      <Brands />
+      <ChatButton />
+      <Footer />
+    </>
+  );
+};
 
-export default Home
+export default Home;
