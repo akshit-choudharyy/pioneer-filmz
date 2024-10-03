@@ -7,15 +7,16 @@ import Footer from './Footer';
 import PhotoGrid from './PhotoGrid';
 import VideoProductionComponent from './VideoProduction';
 
-import Catalog from '../assets/catalog.png';
+import Catalog from '../assets/catalogue.png';
 import Digital from '../assets/digital advertising.png';
 import Business from '../assets/BUSINESS .png';
 import School from '../assets/SCHOOL CATALOG .png';
 import Threede from '../assets/3de.png';
 import Invite from '../assets/INVITATIONS.png';
-import Label from '../assets/LABEL DESINGING (1).jpg';
+import Label from '../assets/designing.jpeg';
 import Logos from '../assets/LOGO THUMBNAILS 2 (2).png';
 import Corp from '../assets/corporate.png';
+import Explainer from '../assets/explainer.png';
 import product from '../assets/product photo.png';
 
 const Home = ({ setScrollToPhotoGrid }) => {
@@ -40,7 +41,7 @@ const Home = ({ setScrollToPhotoGrid }) => {
     { url: product, link: 'https://drive.google.com/drive/folders/1pCSPQCut_nWb2Voazhlkkq_mYWAgyGsB?usp=sharing'},
     { url: Invite, link: 'https://drive.google.com/drive/folders/1F0ewzELuxw159UKEiA0Rz1-8JaxoH1Ot?usp=sharing'},
     { url: Logos , link: 'https://drive.google.com/drive/folders/1yZwByti3HHd_CoTQqxAitjbOJBG2ERXM?usp=sharing'},
-    { url: Catalog , link: 'https://drive.google.com/drive/folders/1JLf-_akevh9jgBpeQH4g1p-yFF8-F4XT?usp=sharing' },
+    { url: Explainer , link: 'https://drive.google.com/drive/folders/1JLf-_akevh9jgBpeQH4g1p-yFF8-F4XT?usp=sharing' },
     { url: 'https://www.dragonfly.co.uk/wp-content/uploads/2023/08/2d-animation-updated.png', link: 'https://drive.google.com/drive/folders/1AjNYg7E1MMd_nMfQLvs8JRKqHu8elMT4?usp=sharing' },
     { url: Threede, link: 'https://drive.google.com/drive/folders/18Y8Sklh3dRV9feug-CqoFBd4oIb10L8R?usp=sharing'},
     { url: School , link: 'https://drive.google.com/drive/folders/10r25SAeIdsM1kAMNwOeobYjaMuRAm9qk?usp=sharing'},
